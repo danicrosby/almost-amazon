@@ -26,9 +26,12 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="authors">Authors</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="favorite-authors">Favorite Authors</a>
+            </li>
             <li>
             <input
-              class="form-control mr-sm-2"
+              class="form-control mr-sm-2 ml-3"
               id="search"
               placeholder="Search Book Titles"
               aria-label="Search"
