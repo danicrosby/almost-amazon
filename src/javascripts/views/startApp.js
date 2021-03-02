@@ -8,14 +8,14 @@ import navigationEvents from '../events/navigationEvents';
 import getAuthors from '../helpers/data/authorData';
 import getBooks from '../helpers/data/bookData';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder(); // BUILD THE DOM
   domEvents(); // ADD THE EVENT LISTENTERS TO THE DOM
   navBar(); // DYNAMICALLY ADD THE NAV
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
   navigationEvents(); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
-  getBooks().then((books) => showBooks(books));// put all books on the dom
-  getAuthors().then((authors) => showAuthors(authors)); // put all authors on the dom
+  getBooks(user.uid).then((books) => showBooks(books));// put all books on the dom
+  getAuthors(user.uid).then((authors) => showAuthors(authors)); // put all authors on the dom
 };
 
 export default startApp;
