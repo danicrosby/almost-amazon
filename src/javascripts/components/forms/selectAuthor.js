@@ -1,7 +1,8 @@
 import firebase from 'firebase/app';
-import { getAuthors } from '../../helpers/data/authorData';
 import 'firebase/auth';
+import { getAuthors } from '../../helpers/data/authorData';
 
+// TODO: Set a default for authorId so that can reuse this component
 const selectAuthor = (bookObject = {}) => {
   let domString = `<label for="author">Select an Author</label>
     <select class="form-control" id="author" required>
@@ -9,6 +10,7 @@ const selectAuthor = (bookObject = {}) => {
 
   getAuthors(firebase.auth().currentUser.uid).then((authorsArray) => {
     authorsArray.forEach((author) => {
+      // TODO: Add conditional to check author_id
       if (author.firebaseKey === bookObject.author_id) {
         domString += `<option selected value="${author.firebaseKey}">${author.first_name} ${author.last_name}</option>`;
       } else {
