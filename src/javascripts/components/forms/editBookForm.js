@@ -24,7 +24,7 @@ const editBookForm = (bookObject) => {
       <button type="submit" id="update-book--${bookObject.firebaseKey}" class="btn btn-success">Update Book</button>
     </form>`;
 
-  selectAuthor(bookObject.author_id);
+  selectAuthor(bookObject);
 };
 
 export default editBookForm;
